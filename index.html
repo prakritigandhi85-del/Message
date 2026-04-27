@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Kitty 💖</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(to bottom, #0f0f0f, #1a1a1a);
+      color: #f5f5f5;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 500px;
+      padding: 25px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 0 40px rgba(255, 182, 193, 0.4);
+      text-align: center;
+      animation: fadeIn 2s ease-in;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    h1 {
+      color: #ffb6c1;
+      margin-bottom: 20px;
+      font-size: 22px;
+    }
+
+    p {
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    .highlight {
+      margin: 20px 0;
+      font-size: 20px;
+      color: #ffd1dc;
+      font-weight: bold;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #aaa;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      background-color: #ffb6c1;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #ffd1dc;
+      transform: scale(1.05);
+    }
+
+    #secret {
+      display: none;
+      margin-top: 15px;
+      color: #ffb6c1;
+      font-weight: bold;
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: absolute;
+      color: pink;
+      font-size: 20px;
+      animation: floatUp 6s linear infinite;
+    }
+
+    @keyframes floatUp {
+      from {
+        transform: translateY(100vh);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-10vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>For Kitty 💕</h1>
+
+    <p>
+      As exams get closer, it's okay to feel overwhelmed, tired, and start
+      questioning if you're truly capable of success.
+    </p>
+
+    <p>
+      But this is the exact moment to hold on. Everyone feels this pressure,
+      but not everyone pushes through it.
+    </p>
+
+    <div class="highlight">You can 💖</div>
+
+    <p>
+      Don’t let the doubt stop you. You’ve worked so hard to get here,
+      and you're worth every bit of success waiting on the other side.
+    </p>
+
+    <p>
+      So keep going, give it everything you’ve got.
+      You’re stronger than you think 💖
+    </p>
+
+    <p class="footer">
+      — From someone who believes in you always ✨
+    </p>
+
+    <button onclick="showMessage()">Click me 💖</button>
+
+    <p id="secret">
+      Kitty, I’m genuinely proud of you. No matter what happens, you’re already amazing 💕
+    </p>
+  </div>
+
+  <script>
+    function showMessage() {
+      document.getElementById("secret").style.display = "block";
+    }
+
+    // Floating hearts only
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "💖";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 20 + 10 + "px";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 6000);
+    }, 500);
+  </script>
+
+</body>
+</html>
